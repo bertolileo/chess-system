@@ -14,16 +14,18 @@ public class Program {
 		
 		ChessMatch match = new ChessMatch();
 		while (true) {
+			UI.clearScreen();
 			UI.printBoard(match.getPieces());
-			System.out.println();
 			
-			System.out.print("Source: ");
-			ChessPosition source = UI.readChessPosition(sc);
-			System.out.println();
-			System.out.print("Target: ");
-			ChessPosition target = UI.readChessPosition(sc);
+				System.out.println();
+				System.out.println();
+				System.out.print("Source: ");
+				ChessPosition source = UI.readChessPosition(sc);
+				System.out.println();
+				System.out.print("Target: ");
+				ChessPosition target = UI.readChessPosition(sc);
+				ChessPiece capturedPiece = match.performChessMove(source, target);
 			
-			ChessPiece capturedPiece = match.performChessMove(source, target);
 		}
 		
 	
