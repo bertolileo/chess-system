@@ -61,7 +61,11 @@ public class ChessMatch {
 		return capturedPiece;
 	}
 	
-	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+		Position p = sourcePosition.toPosition();
+		validadeSourcePosition(p);
+		return board.piece(p).possibleMoves();
+	}
 	
 	public void initialSetup() {
 		placeNewPiece('c', 2, new Rook(board, Color.WHITE));
